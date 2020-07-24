@@ -1,0 +1,33 @@
+<div class="div-table" >
+    <table style="border-radius: 2px; border-style: dotted;"  class="table table-striped">
+    <thead style="background-color:lightgray"> 
+      <tr>
+     <th  style="height: 40px; width: 100px;" >Index</th>
+     <th>ID</th>
+     <th >Image</th>
+     <th>Title</th>
+     <th>Author</th>
+     <th>Category</th>
+     <th >Price</th>
+     <th >Last Updated</th>
+     <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of bookInformation let m=index">  
+       <td>{{(m+1)}}</td>
+       <td>{{i.bookId}}</td>
+       <td><img src="assets/images/{{i.bookId}}.jpg" height="50" width="55"/></td>
+      <td>{{i.title}}</td>
+      <td>{{i.author}}</td>
+      <td>{{i.category.categoryName}} </td>
+      <td>{{i.price}}</td>
+      <td>{{i.lastUpdatedTime}}</td>
+      <td><button class="btn btn-success">Edit</button>
+        <button class="btn btn-danger">Delete</button></td>
+  </tbody>  
+    
+</table> 
+    </div>
+    
+  
