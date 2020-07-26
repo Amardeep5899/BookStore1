@@ -119,5 +119,11 @@ public class BookStoreDaoImpl implements BookStoreDao {
 	    }
 	    return true;
 	}
-
+	@Override
+	public List<BookCategory> listAllCategory() {
+		
+		String qstr="Select b from BookCategory b";
+		TypedQuery<BookCategory> query=entitiManager.createQuery(qstr,BookCategory.class);
+		return query.getResultList();
+	}
 }

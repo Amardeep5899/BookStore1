@@ -1,5 +1,7 @@
 package com.cg.bookStore.service;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -59,6 +61,15 @@ public class ManageCategoryServiceImpl implements ManageCategoryService{
 		throw new CategoryException(BookStoreConstants.CATEGORY_DOES_NOT_EXIST);
 	}
 
+	@Override
+	public List<BookCategory> listAllCategory() throws CategoryException {
+		List<BookCategory> allBooks = bookStoreDao.listAllCategory();
+		if(allBooks.isEmpty()) {
+			throw new CategoryException(BookStoreConstants.CATEGORY_DOES_NOT_EXIST);
+		}
+		return allBooks;
+	}
+	
 
 
 	
